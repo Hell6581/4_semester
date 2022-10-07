@@ -9,7 +9,7 @@ begin
     on employees.EmployeeID = orders.EmployeeID 
     join orderdetails
     on orders.OrderID = orderdetails.OrderID
-    where year(orders.OrderData) = salesyear
+    where year(orders.OrderDate) = salesyear
     group by employees.LastName
     order by Total desc;
 end $$
